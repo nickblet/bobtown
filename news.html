@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<title>Warning | BobTown</title>
+<meta name="description" content='Лучший город на #СП5 - "БобТаун"'>
+<title>News | BobTown</title>
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,8 +17,8 @@
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="index.html">Главная</a></li>
-		<li><a href="news.html">Новости</a></li>
-		<li class="active"><a href="warning.html">Внимание!</a></li>
+		<li class="active"><a href="news.html">Новости</a></li>
+		<li><a href="warning.html">Внимание!</a></li>
       </ul>
     </nav>
   </header>
@@ -30,17 +31,31 @@
   </div>
 </div>
 <div class="wrapper row3">
-  <main class="hoc container clear">
-    <div class="content"> 
-      <h1>Внивание! Прямо сейчас на #СП5 идет война!</h1>
-      <img class="imgr borderedbox inspace-5" src="../images/demo/imgr.gif" alt="">
-      <p>Прямо сейчас СПСквад(запрещенная на территории "БобТауна" организация) ограничивает свободу СП. Если вы хотите свободы на СП, присоединяйтесь к Р.П.Б.О.Б.!</p>
-      <p>Мы хотим свободы на СП. Нам надоело, что сервером управляют не обычный народ. Нам надоело, что в СПСкваде(запрещенная на территории "БобТауна" организация) так много душнил. Мы это исправим.</p>
-      <p>Нонрпшеры должны быть наказаны. Почему в СПСкваде(запрещенная на территории "БобТауна" организация) есть нонрпшеры? Нам это не нравится и мы будем с этим боротся.</p>
-      <p>Если в СПСкваде(запрещенная на территории "БобТауна" организация) нонрпшеры будут продолжать, то начнется План "Барсук".</p>
-      <p>Приходите в ПосоСити(Красная 1060), чтобы сделать СП лучше.</p>
+  <section class="hoc container clear"> 
+    <div class="sectiontitle">
+      <p class="nospace font-xs">Очень интересные...</p>
+      <h6 class="heading font-x2">Последние новости</h6>
     </div>
-  </main>
+    <ul id="latest" class="nospace group">
+    </ul>
+  </section>
+</div>
+<div class="wrapper row2">
+  <section id="ctdetails" class="hoc container clear"> 
+    <div class="sectiontitle">
+      <p class="nospace font-xs">Кому-то они нужны?</p>
+      <h6 class="heading font-x2">Контакты</h6>
+    </div>
+    <figure class="one_half first">
+      <ul class="nospace clear">
+        <li class="block clear"><a href="#"><i class="fab fa-discord"></i></a> <span><strong>ДС создателя этой хуйни:</strong> blyatidinahui#1337</span></li>
+		<li class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Есть идеи? Пиши:</strong> info@bobtown.ga</span></li>
+      </ul>
+    </figure>
+    <article class="one_half">
+      <img src="images/546x356.png">
+    </article>
+  </section>
 </div>
 <div class="bgded overlay row4" style="background-image:url('images/backgrounds/01.png');">
   <footer id="footer" class="hoc clear">
@@ -58,12 +73,14 @@
 </div>
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
-    <p class="fl_left">Copyright &copy; 2022 - Все права забобленны - <a href="https://bobtown.ga/">bobtown.ga</a></p>
+    <p class="fl_left">Copyright &copy; 2022 - Все права забобленны - <a href="https://bobtown.ga">bobtown.ga</a></p>
   </div>
 </div>
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.easypiechart.min.js"></script>
+<script src="layout/scripts/news.js"></script>
 </body>
 </html>
