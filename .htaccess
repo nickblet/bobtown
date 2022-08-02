@@ -1,3 +1,4 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+Redirect 301 /streams https://www.youtube.com/channel/UC-3ziBFW0krVwTmIDav99ig
