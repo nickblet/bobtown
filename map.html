@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Map | BobTown</title>
+<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="layout/styles/map.css">
+</head>
+<body id="top">
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left"> 
+      <h1 class="logoname"><a href="index.html">Bob<span>T</span>own</a></h1>
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li><a href="index.html">Главная</a></li>
+		<li class="active"><a href="map.html">Карта</a></li>
+		<li><a href="ban.html">Бан</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<div class="bgded overlay" style="background-image:url('images/backgrounds/01.png');">
+  <div id="breadcrumb" class="hoc clear"> 
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+    </ul>
+  </div>
+</div>
+<div class="wrapper row2">
+  <section id="ctdetails" class="hoc container clear"> 
+    <div class="sectiontitle">
+      <p class="nospace font-xs">Интересная и интереактивная...</p>
+      <h6 class="heading font-x2">Карта БобТауна</h6>
+    </div>
+    <figure class="one_half first">
+      <ul class="nospace clear">
+	    <li class="block clear"><a href="#"><i class="fas fa-map"></i></a> <span><strong>Интерактивная карта</strong> Ее можно двигать!</span></li>
+        <li class="block clear"><a href="#"><i class="fab fa-discord"></i></a> <span><strong>ДС создателя этой хуйни:</strong> horay#2603</span></li>
+		<li class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Есть идеи? Пиши:</strong> info@bobtown.ga</span></li>
+      </ul>
+    </figure>
+    <article class="one_half">
+    <div id="container" style="height: 32rem; width: 32rem; overflow: auto; overflow: hidden;">
+		<div id="map">
+		<ul id="pins">
+		</ul>
+		</div>
+	</div>
+    </article>
+  </section>
+</div>
+<div class="bgded overlay row4" style="background-image:url('images/backgrounds/01.png');">
+  <footer id="footer" class="hoc clear">
+    <div class="one_quarter first">
+      <h1 class="logoname"><a href="index.html">Bob<span>T</span>own</a></h1>
+      <ul class="faico clear">
+		<li><a class="faicon-twitch" href="https://www.twitch.tv/doublefunnoobs"><i class="fab fa-twitch"></i></a></li>
+        <li><a class="faicon-youtube" href="https://www.youtube.com/c/DoubleFunNoobs"><i class="fab fa-youtube"></i></a></li>
+        <li><a class="faicon-vk" href="https://vk.com/doublefunnoobs"><i class="fab fa-vk"></i></a></li>
+        <li><a class="faicon-telegram" href="https://t.me/dfnyt"><i class="fab fa-telegram"></i></a></li>
+		<li><a class="faicon-discord" href="https://discord.gg/tU5JYsVz"><i class="fab fa-discord"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; 2022 - Все права забобленны - <a href="https://bobtown.ga/">bobtown.ga</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+<script src="layout/scripts/map.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	const ele = document.getElementById('container');
+	ele.style.cursor = 'grab';
+	let pos = { top: 0, left: 0, x: 0, y: 0 };
+	const mouseDownHandler = function (e) {
+		ele.style.cursor = 'grabbing';
+		ele.style.userSelect = 'none';
+		pos = {
+			left: ele.scrollLeft,
+			top: ele.scrollTop,
+			x: e.clientX,
+			y: e.clientY,
+		};
+		document.addEventListener('mousemove', mouseMoveHandler);
+		document.addEventListener('mouseup', mouseUpHandler);
+	};
+	const mouseMoveHandler = function (e) {
+		const dx = e.clientX - pos.x;
+		const dy = e.clientY - pos.y;
+		ele.scrollTop = pos.top - dy;
+		ele.scrollLeft = pos.left - dx;
+	};
+	const mouseUpHandler = function () {
+		ele.style.cursor = 'grab';
+		ele.style.removeProperty('user-select');
+		document.removeEventListener('mousemove', mouseMoveHandler);
+		document.removeEventListener('mouseup', mouseUpHandler);
+	};
+	ele.addEventListener('mousedown', mouseDownHandler);
+});
+</script>
+</html>
