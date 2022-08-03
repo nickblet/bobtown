@@ -1,0 +1,61 @@
+.container {
+width: 100%;
+height: 100%;
+overflow-y: scroll;
+}
+
+#map {
+width: 1024px;
+height: 1024px;
+background: url(../../images/min_map.png);
+position: relative;
+overflow: hidden;
+margin-left: auto; 
+margin-right: auto;
+}
+#map ul {
+background: transparent;
+padding: 0;
+margin: 0;
+width: 1024px;
+height: 1024px;
+list-style: none;
+}
+#map ul li {
+display: inline;
+width: 0;
+height: 0;
+}
+#map a {
+position: absolute;
+display: block;
+width: 30px;
+height: 30px;
+background: url(../../images/min_pin.png);
+cursor: pointer;
+}
+
+.popupClass {
+position: relative;
+display: inline-block;
+cursor: text;
+}
+.description {
+visibility: hidden;
+background-color: white;
+width: 200px;
+text-align: center;
+position: absolute;
+z-index: 1;
+border-radius: 10px;
+padding: 10px 0;
+left: 30%;
+margin-left: -100px;
+}
+.popupClass .display {
+visibility: visible;
+}
+h3 {
+font-size: 140%;
+margin: 3px;
+}
